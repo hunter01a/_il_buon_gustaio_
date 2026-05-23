@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+<title>Il Buongustaio · Prato</title>
+<meta name="description" content="Bottega di famiglia a Mezzana, Prato. Dal 1986. Lasagne, Pata Negra, mortadella di Prato, Carmignano." />
+
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="apple-touch-icon" href="logo.jpg">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A1612">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Buongustaio">
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Il Buongustaio · Mezzana, Prato" />
+<meta property="og:description" content="Bottega di famiglia. Dal 1986. Lasagne, Pata Negra, mortadella di Prato." />
+<meta property="og:image" content="assets/foto/banco-famiglia.jpg" />
+<meta property="og:locale" content="it_IT" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Italianno&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cipresso: #2E3D2F;
+  --oliva: #5A6B47;
+  --oro: #A8843C;
+  --oro-chiaro: #C9A663;
+  --pietra: #D9C9A8;
+  --avorio: #EFE6D2;
+  --panna: #F0EAD8;
+  --inchiostro: #1A1612;
+  --grafite: #3D352B;
+  --polvere: #6E6450;
+  --linea: rgba(168, 132, 60, 0.18);
+  --wa: #25d366;
+  --pesce: #1c4a60;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body {
+  background: var(--panna);
+  color: var(--inchiostro);
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body { padding-bottom: 80px; /* spazio per tab bar */ }
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+img { display: block; width: 100%; height: auto; }
+
+/* === HEADER MOBILE === */
+.m-header {
+  background: var(--inchiostro);
+  padding: 14px 18px;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--oro);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.m-brand {
+  font-family: 'Italianno', cursive;
+  font-size: 28px;
+  color: var(--panna);
+  line-height: 1;
+  grid-column: 2;
+  justify-self: center;
+  text-align: center;
+}
+.m-brand em { color: var(--oro); font-style: normal; }
+.m-brand small {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  color: var(--oro);
+  margin-top: 2px;
+}
+.m-quick {
+  display: flex;
+  gap: 8px;
+  grid-column: 3;
+  justify-self: end;
+}
+.m-quick a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: transparent;
+  border: 1px solid var(--oro);
+  color: var(--oro);
+}
+.m-quick a.wa {
+  background: var(--wa);
+  border-color: var(--wa);
+  color: #fff;
+  opacity: 0.85;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.m-quick a.wa:hover { opacity: 1; transform: scale(1.05); }
+.m-quick a.wa svg { display: block; width: 20px; height: 20px; }
+
+/* === HERO === */
+.m-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 380px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(26,22,18,0.85) 100%),
+    url('assets/foto/banco-famiglia.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px 22px 28px;
+  color: var(--panna);
+}
+.hero-content {
+  width: 100%;
+}
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--oro);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero-titolo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.05;
+  color: var(--panna);
+  margin-bottom: 8px;
+}
+.hero-titolo em { font-style: italic; color: var(--oro); }
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.45;
+  color: rgba(240, 234, 216, 0.85);
+  margin-bottom: 18px;
+}
+.hero-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(168, 132, 60, 0.5);
+  backdrop-filter: blur(6px);
+}
+.hero-pulse {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #5a8d4a;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(90, 141, 74, 0.7); }
+  50% { opacity: 0.85; box-shadow: 0 0 0 8px rgba(90, 141, 74, 0); }
+}
+.hero-meta span {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--panna);
+  font-weight: 500;
+}
+
+/* === SEZIONE COMMON === */
+.m-section {
+  padding: 32px 22px;
+  border-bottom: 1px solid var(--linea);
+}
+.section-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--oro);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.section-titolo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--inchiostro);
+  margin-bottom: 14px;
+}
+.section-titolo em { font-style: italic; color: var(--cipresso); }
+.section-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--grafite);
+  margin-bottom: 20px;
+}
+
+/* === BIG ACTIONS (4 cta giganti) === */
+.m-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 22px 18px;
+  background: var(--avorio);
+}
+.m-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 12px;
+  background: var(--panna);
+  border: 1px solid var(--linea);
+  border-left: 3px solid var(--oro);
+  text-align: center;
+  transition: all 200ms;
+}
+.m-action:active { transform: scale(0.97); }
+.m-action .icon { font-size: 30px; line-height: 1; }
+.m-action .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--inchiostro);
+  font-weight: 600;
+}
+.m-action .desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--polvere);
+}
+.m-action.wa-action { background: var(--wa); border-left-color: #128c7e; }
+.m-action.wa-action .label, .m-action.wa-action .desc { color: #fff; }
+.m-action.wa-action .desc { color: rgba(255,255,255,0.85); }
+
+/* === OGGI AL BANCO === */
+.m-oggi {
+  background: linear-gradient(180deg, var(--inchiostro) 0%, #232017 100%);
+  padding: 32px 22px;
+  color: var(--panna);
+  border-top: 4px solid var(--oro);
+  border-bottom: 4px solid var(--oro);
+}
+.m-oggi .section-eyebrow { color: var(--oro); }
+.m-oggi .section-titolo { color: var(--panna); }
+.m-oggi .section-titolo em { color: var(--oro); }
+.m-oggi-data {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(240, 234, 216, 0.65);
+  margin-bottom: 18px;
+}
+.oggi-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  background: rgba(240, 234, 216, 0.05);
+  border-left: 3px solid var(--oro);
+  margin-bottom: 8px;
+}
+.oggi-card .emoji { font-size: 26px; flex-shrink: 0; }
+.oggi-card-body h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--panna);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.oggi-card-body p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(240, 234, 216, 0.75);
+}
+.oggi-card-body p strong { color: var(--oro); font-style: normal; }
+
+/* === PRODOTTI SWIPE === */
+.m-prodotti-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 18px 24px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -22px;
+}
+.m-prodotti-scroll::-webkit-scrollbar { display: none; }
+.m-prodotti-scroll { scrollbar-width: none; }
+.m-prodotti-scroll::before, .m-prodotti-scroll::after {
+  content: ''; flex: 0 0 4px;
+}
+.m-prod-card {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  background: var(--panna);
+  border: 1px solid var(--linea);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.m-prod-card img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.m-prod-card-body { padding: 12px 14px 14px; }
+.m-prod-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--inchiostro);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.m-prod-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--polvere);
+  line-height: 1.4;
+}
+
+/* === FESTE === */
+.m-festa-card {
+  background: var(--panna);
+  border: 1px solid var(--linea);
+  border-left: 3px solid var(--oro);
+  padding: 18px 18px 16px;
+  margin-bottom: 10px;
+  display: block;
+  position: relative;
+}
+.m-festa-card.festa-imminente { border-left-color: #d4503c; border-left-width: 4px; }
+.m-festa-card .data-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.m-festa-card .data {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--oro);
+  font-weight: 600;
+}
+.m-festa-card .stato {
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  padding: 3px 8px;
+  background: rgba(90, 141, 74, 0.15);
+  color: #2e5a23;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.m-festa-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--inchiostro);
+  margin-bottom: 6px;
+}
+.m-festa-card h4 em { color: var(--cipresso); font-style: italic; }
+.m-festa-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--grafite);
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+.m-festa-card .freccia {
+  text-align: right;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--oro);
+  font-weight: 600;
+}
+
+/* === FAMIGLIA === */
+.m-famiglia-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+.m-persona {
+  text-align: center;
+}
+.m-persona .ritratto {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--oro) 0%, #8a6a30 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.m-persona .ritratto::after {
+  content: attr(data-iniziale);
+  font-family: 'Italianno', cursive;
+  font-size: 32px;
+  color: var(--inchiostro);
+  position: absolute;
+  z-index: 1;
+}
+.m-persona .ritratto img {
+  position: relative;
+  z-index: 2;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.m-persona .nome {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  color: var(--inchiostro);
+  font-style: italic;
+}
+
+/* === TROVACI === */
+.m-trovaci {
+  background: linear-gradient(135deg, var(--cipresso) 0%, #243024 100%);
+  color: var(--panna);
+  padding: 32px 22px;
+}
+.m-trovaci .section-eyebrow { color: var(--oro); }
+.m-trovaci .section-titolo { color: var(--panna); }
+.m-trovaci .section-titolo em { color: var(--oro); }
+.m-trovaci-info {
+  margin-top: 18px;
+}
+.m-trovaci-info p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--panna);
+  margin-bottom: 8px;
+}
+.m-trovaci-info p strong { color: var(--oro); font-style: italic; }
+.m-orari {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(168, 132, 60, 0.3);
+}
+.m-orari-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  padding: 4px 0;
+  color: rgba(240, 234, 216, 0.85);
+}
+.m-orari-row strong { color: var(--panna); font-weight: 500; }
+.m-trovaci-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 20px;
+}
+.m-btn-trovaci {
+  text-align: center;
+  padding: 14px 12px;
+  background: var(--oro);
+  color: var(--inchiostro);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* === RECENSIONI SLIDER === */
+.m-recensioni-slider {
+  overflow: hidden;
+  position: relative;
+}
+.m-rec-track {
+  display: flex;
+  transition: transform 600ms cubic-bezier(.34,1.2,.64,1);
+}
+.m-rec-card {
+  flex: 0 0 100%;
+  padding: 4px 4px;
+  display: flex;
+  flex-direction: column;
+}
+.m-rec-card-inner {
+  background: var(--avorio);
+  border-left: 3px solid var(--oro);
+  padding: 20px 18px;
+  min-height: 200px;
+}
+.m-rec-stars {
+  color: var(--oro);
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.m-rec-card blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--grafite);
+  margin-bottom: 12px;
+}
+.m-rec-card blockquote strong { color: var(--inchiostro); font-style: normal; font-weight: 500; }
+.m-rec-card .firma {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--polvere);
+  padding-top: 10px;
+  border-top: 1px solid var(--linea);
+}
+.m-rec-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+.m-rec-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--linea);
+  border: 0;
+  padding: 0;
+  transition: all 250ms;
+}
+.m-rec-dot.active { background: var(--oro); width: 22px; border-radius: 3px; }
+
+/* === LINK PAGINE === */
+.m-links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 16px;
+}
+.m-link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--avorio);
+  border: 1px solid var(--linea);
+  border-left: 3px solid var(--oro);
+}
+.m-link-card .ico { font-size: 24px; flex-shrink: 0; }
+.m-link-card .info { flex: 1; }
+.m-link-card h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--inchiostro);
+  margin-bottom: 2px;
+}
+.m-link-card .desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--polvere);
+}
+.m-link-card .freccia {
+  color: var(--oro);
+  font-size: 20px;
+}
+
+/* === TAB BAR FISSA IN BASSO === */
+.tab-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 64px;
+  background: var(--inchiostro);
+  border-top: 1px solid rgba(168, 132, 60, 0.3);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  z-index: 200;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+.tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  border: 0;
+  color: rgba(240, 234, 216, 0.6);
+  transition: color 200ms;
+  padding: 0;
+}
+.tab-btn .ico { font-size: 20px; line-height: 1; }
+.tab-btn .lbl {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.tab-btn.active { color: var(--oro); }
+.tab-btn:active { background: rgba(168, 132, 60, 0.1); }
+
+/* === DESKTOP SWITCH LINK === */
+.desktop-link {
+  text-align: center;
+  padding: 14px;
+  background: var(--avorio);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--polvere);
+  border-top: 1px solid var(--linea);
+}
+.desktop-link a {
+  color: var(--oro);
+  border-bottom: 1px solid var(--oro);
+  font-weight: 500;
+}
+
+/* === SCHERMI GRANDI: nasconde tutto e redirige === */
+@media (min-width: 1024px) {
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--inchiostro);
+    z-index: 10000;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="m-header">
+  <a href="#" class="m-brand">
+    <em>il</em> buongustaio
+    <small>DAL 1986</small>
+  </a>
+  <div class="m-quick">
+    <a href="https://wa.me/393333333333" target="_blank" rel="noopener" class="wa" aria-label="WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016a9.87 9.87 0 0 1-5.031-1.378l-.36-.214-3.75.975 1.005-3.645-.239-.375a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 0 0 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411" fill="#fff"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="m-hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Mezzana · Prato</p>
+    <h1 class="hero-titolo">Bottega <em>di famiglia</em>.</h1>
+    <p class="hero-sub">Quarant'anni in via Catani. Gastronomia, enoteca, cacioteca.</p>
+    <div class="hero-meta">
+      <span class="hero-pulse" id="pulse-stato"></span>
+      <span id="testo-stato">aperti ora</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4 AZIONI GIGANTI -->
+<section class="m-actions">
+  <a href="tel:+390574593398" class="m-action">
+    <span class="icon">📞</span>
+    <span class="label">Chiama</span>
+    <span class="desc">0574 593398</span>
+  </a>
+  <a href="https://wa.me/393333333333" target="_blank" rel="noopener" class="m-action wa-action">
+    <span class="icon">💬</span>
+    <span class="label">WhatsApp</span>
+    <span class="desc">Scrivici subito</span>
+  </a>
+  <a href="#oggi" class="m-action">
+    <span class="icon">▤</span>
+    <span class="label">Oggi al banco</span>
+    <span class="desc">Cosa c'è di fresco</span>
+  </a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Il+Buongustaio+via+Catani+38+Prato" target="_blank" rel="noopener" class="m-action">
+    <span class="icon">📍</span>
+    <span class="label">Indicazioni</span>
+    <span class="desc">Via Catani 38</span>
+  </a>
+</section>
+
+<!-- OGGI AL BANCO -->
+<section class="m-oggi" id="oggi">
+  <p class="section-eyebrow">Bacheca del giorno</p>
+  <h2 class="section-titolo">Oggi <em>al banco</em>.</h2>
+  <p class="m-oggi-data" id="data-corrente">giovedì 22 maggio</p>
+
+  <div class="oggi-card">
+    <span class="emoji">🍝</span>
+    <div class="oggi-card-body">
+      <h4>Lasagne al forno</h4>
+      <p>Pronte alle <strong>11:30</strong> e alle <strong>18:00</strong>. Restano poche porzioni.</p>
+    </div>
+  </div>
+  <div class="oggi-card">
+    <span class="emoji">🍞</span>
+    <div class="oggi-card-body">
+      <h4>Schiacciata appena sfornata</h4>
+      <p>Calda dalle <strong>10:30</strong>. Pasta madre, olio EVO, sale grosso.</p>
+    </div>
+  </div>
+  <div class="oggi-card">
+    <span class="emoji">🥩</span>
+    <div class="oggi-card-body">
+      <h4>Pata Negra: pezzo nuovo</h4>
+      <p>Stagionatura 36 mesi. <strong>Vienilo ad assaggiare.</strong></p>
+    </div>
+  </div>
+  <div class="oggi-card">
+    <span class="emoji">🐟</span>
+    <div class="oggi-card-body">
+      <h4>Domani venerdì del pesce</h4>
+      <p>Vongole, gamberi rossi, sarde marinate. <strong>Aroma del mare dalle 11.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- LA BOTTEGA -->
+<section class="m-section" id="bottega">
+  <p class="section-eyebrow">La bottega</p>
+  <h2 class="section-titolo">Cosa c'è <em>al banco</em>.</h2>
+  <p class="section-intro">Selezione del giorno. Scorri lateralmente per vedere tutto.</p>
+</section>
+<div class="m-prodotti-scroll">
+  <div class="m-prod-card">
+    <img src="assets/foto/lasagne.jpg" alt="Lasagne al forno" loading="lazy">
+    <div class="m-prod-card-body"><h4>Lasagne al forno</h4><p>Sfoglia a mano, ragù lento.</p></div>
+  </div>
+  <div class="m-prod-card">
+    <img src="assets/foto/mortadella.jpg" alt="Mortadella di Prato IGP" loading="lazy">
+    <div class="m-prod-card-body"><h4>Mortadella di Prato IGP</h4><p>Ricetta del Cinquecento.</p></div>
+  </div>
+  <div class="m-prod-card">
+    <img src="assets/foto/prosciutto-parma.jpg" alt="Prosciutto di Parma DOP" loading="lazy">
+    <div class="m-prod-card-body"><h4>Prosciutto di Parma DOP</h4><p>Stagionatura 24 mesi.</p></div>
+  </div>
+  <div class="m-prod-card">
+    <img src="assets/foto/sol-capra.jpg" alt="Sol di Capra" loading="lazy">
+    <div class="m-prod-card-body"><h4>Sol di Capra</h4><p>Pecorino umbro.</p></div>
+  </div>
+  <div class="m-prod-card">
+    <img src="assets/foto/schiacciata.jpg" alt="Schiacciata toscana" loading="lazy">
+    <div class="m-prod-card-body"><h4>Schiacciata toscana</h4><p>Calda dalle 10:30.</p></div>
+  </div>
+  <div class="m-prod-card">
+    <img src="assets/foto/bottarga.jpg" alt="Bottarga di muggine" loading="lazy">
+    <div class="m-prod-card-body"><h4>Bottarga di muggine</h4><p>Da Sardegna.</p></div>
+  </div>
+  <div class="m-prod-card">
+    <img src="assets/foto/pata-negra-grande.jpg" alt="Pata Negra Iberico" loading="lazy">
+    <div class="m-prod-card-body"><h4>Pata Negra</h4><p>Stagionatura 36 mesi.</p></div>
+  </div>
+</div>
+
+<!-- LE FESTE -->
+<section class="m-section" id="feste">
+  <p class="section-eyebrow">Per le feste della casa</p>
+  <h2 class="section-titolo">Prenota <em>in anticipo</em>.</h2>
+  <p class="section-intro">Pandori, colombe, agnelli, cestini Ferragosto. Pezzi limitati.</p>
+
+  <a href="tel:+390574593398" class="m-festa-card festa-imminente">
+    <div class="data-row">
+      <span class="data">Ogni venerdì</span>
+      <span class="stato" style="background:rgba(28,74,96,0.15);color:#1c4a60;">appuntamento fisso</span>
+    </div>
+    <h4>L'aroma <em>del mare</em></h4>
+    <p>Pesce fresco al banco · Degustazione 11-13 · 16€ a persona.</p>
+    <div class="freccia">PRENOTA →</div>
+  </a>
+
+  <a href="tel:+390574593398" class="m-festa-card">
+    <div class="data-row">
+      <span class="data">15 agosto</span>
+      <span class="stato">prenotazioni aperte</span>
+    </div>
+    <h4>Ferragosto <em>in tavola</em></h4>
+    <p>Vitello tonnato, schiacciata, cestini per 4 persone · 78€.</p>
+    <div class="freccia">PRENOTA →</div>
+  </a>
+
+  <a href="tel:+390574593398" class="m-festa-card">
+    <div class="data-row">
+      <span class="data">24-25 dicembre</span>
+      <span class="stato" style="background:rgba(168,132,60,0.15);color:#886920;">in pre-prenotazione</span>
+    </div>
+    <h4>Natale <em>dei Bindi</em></h4>
+    <p>Pandoro al lievito madre, panettone, cesti natalizi · da 24€.</p>
+    <div class="freccia">PRENOTA →</div>
+  </a>
+</section>
+
+<!-- LA FAMIGLIA -->
+<section class="m-section" id="famiglia">
+  <p class="section-eyebrow">La famiglia</p>
+  <h2 class="section-titolo">Siamo in <em>cinque</em>.</h2>
+  <p class="section-intro">Le mani che impastano, tagliano, scelgono. Tutti i giorni in via Catani.</p>
+
+  <div class="m-famiglia-grid">
+    <div class="m-persona">
+      <div class="ritratto" data-iniziale="R"><img src="assets/foto/ritratto-rossana.jpg" alt="Rossana" onerror="this.style.display='none'"></div>
+      <p class="nome">Rossana</p>
+    </div>
+    <div class="m-persona">
+      <div class="ritratto" data-iniziale="P"><img src="assets/foto/ritratto-paola.jpg" alt="Paola" onerror="this.style.display='none'"></div>
+      <p class="nome">Paola</p>
+    </div>
+    <div class="m-persona">
+      <div class="ritratto" data-iniziale="G"><img src="assets/foto/ritratto-gianni.jpg" alt="Gianni" onerror="this.style.display='none'"></div>
+      <p class="nome">Gianni</p>
+    </div>
+    <div class="m-persona">
+      <div class="ritratto" data-iniziale="L"><img src="assets/foto/ritratto-lorenzo.jpg" alt="Lorenzo" onerror="this.style.display='none'"></div>
+      <p class="nome">Lorenzo</p>
+    </div>
+    <div class="m-persona">
+      <div class="ritratto" data-iniziale="A"><img src="assets/foto/ritratto-alessio.jpg" alt="Alessio" onerror="this.style.display='none'"></div>
+      <p class="nome">Alessio</p>
+    </div>
+  </div>
+</section>
+
+<!-- RECENSIONI SLIDER -->
+<section class="m-section" id="recensioni">
+  <p class="section-eyebrow">★★★★★ 4.8/5 · Google</p>
+  <h2 class="section-titolo">Cosa <em>dicono di noi</em>.</h2>
+  <p class="section-intro">Voci vere dei nostri clienti. Scorri →</p>
+
+  <div class="m-recensioni-slider">
+    <div class="m-rec-track" id="rec-track">
+
+      <div class="m-rec-card">
+        <div class="m-rec-card-inner">
+          <div class="m-rec-stars">★★★★★</div>
+          <blockquote>«Penso che non ci sia un altro posto migliore di questo in tutto Prato. <strong>Il rapporto qualità prezzo è veramente stupefacente.</strong> Grazie Buongustaio.»</blockquote>
+          <p class="firma">— Alessandro F.</p>
+        </div>
+      </div>
+
+      <div class="m-rec-card">
+        <div class="m-rec-card-inner">
+          <div class="m-rec-stars">★★★★★</div>
+          <blockquote>«Scoperto da poco, hanno solo eccellenze! Buonissimo tutto. <strong>LASAGNE AL TOP!!!</strong>»</blockquote>
+          <p class="firma">— Marco R.</p>
+        </div>
+      </div>
+
+      <div class="m-rec-card">
+        <div class="m-rec-card-inner">
+          <div class="m-rec-stars">★★★★★</div>
+          <blockquote>«Qualità del cibo ottima, prodotti estremamente selezionati. <strong>Sicuramente da provare!</strong>»</blockquote>
+          <p class="firma">— Giulia M.</p>
+        </div>
+      </div>
+
+      <div class="m-rec-card">
+        <div class="m-rec-card-inner">
+          <div class="m-rec-stars">★★★★★</div>
+          <blockquote>«Pane, schiacciata e affettati buonissimi, prezzi ottimi e <strong>personale favoloso</strong>. Bravi.»</blockquote>
+          <p class="firma">— Laura B.</p>
+        </div>
+      </div>
+
+      <div class="m-rec-card">
+        <div class="m-rec-card-inner">
+          <div class="m-rec-stars">★★★★★</div>
+          <blockquote>«<strong>Posto top da sempre.</strong>»</blockquote>
+          <p class="firma">— Sandro P.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="m-rec-dots" id="rec-dots"></div>
+  </div>
+</section>
+
+<!-- TROVACI -->
+<section class="m-trovaci" id="trovaci">
+  <p class="section-eyebrow">Trovaci</p>
+  <h2 class="section-titolo">Via Catani 38, <em>a Mezzana</em>.</h2>
+
+  <div class="m-trovaci-info">
+    <p>📍 Via Giuseppe Catani 38/40<br/>59100 Prato (PO)</p>
+    <p>📞 <strong>0574 593398</strong></p>
+  </div>
+
+  <div class="m-orari">
+    <div class="m-orari-row"><strong>Lun – Sab</strong><span>7:30 – 14:30 · 17:00 – 20:00</span></div>
+    <div class="m-orari-row"><strong>Domenica</strong><span>chiuso</span></div>
+  </div>
+
+  <div class="m-trovaci-btns">
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Il+Buongustaio+via+Catani+38+Prato" target="_blank" rel="noopener" class="m-btn-trovaci">📍 Apri in Maps</a>
+    <a href="tel:+390574593398" class="m-btn-trovaci">📞 Chiama ora</a>
+  </div>
+</section>
+
+<!-- LINK PAGINE INTERNE -->
+<section class="m-section">
+  <p class="section-eyebrow">Approfondisci</p>
+  <h2 class="section-titolo">Scopri <em>di più</em>.</h2>
+  <div class="m-links-grid">
+    <a href="storia.html" class="m-link-card">
+      <span class="ico">📖</span>
+      <div class="info">
+        <h5>La nostra storia</h5>
+        <p class="desc">Dal 1986 in via Catani · Famiglia Bindi</p>
+      </div>
+      <span class="freccia">→</span>
+    </a>
+    <a href="faq.html" class="m-link-card">
+      <span class="ico">❓</span>
+      <div class="info">
+        <h5>Domande frequenti</h5>
+        <p class="desc">Pagamenti, consegne, vegano, glutine</p>
+      </div>
+      <span class="freccia">→</span>
+    </a>
+    <a href="allergeni.html" class="m-link-card">
+      <span class="ico">⚠️</span>
+      <div class="info">
+        <h5>Allergeni e sicurezza</h5>
+        <p class="desc">14 allergeni UE · Abbattitore pesce</p>
+      </div>
+      <span class="freccia">→</span>
+    </a>
+    <a href="https://www.instagram.com/ilbuongustaio.snc/" target="_blank" rel="noopener" class="m-link-card">
+      <span class="ico">📷</span>
+      <div class="info">
+        <h5>Instagram</h5>
+        <p class="desc">@ilbuongustaio.snc · aggiornamenti</p>
+      </div>
+      <span class="freccia">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- Switch al sito desktop -->
+<div class="desktop-link">
+  Sei al sito mobile · <a href="index.html?desktop=1" id="link-desktop">vai al sito desktop →</a>
+</div>
+
+<!-- TAB BAR FISSA -->
+<nav class="tab-bar">
+  <button class="tab-btn active" data-target="#oggi">
+    <span class="ico">▤</span>
+    <span class="lbl">Oggi</span>
+  </button>
+  <button class="tab-btn" data-target="#bottega">
+    <span class="ico">🍝</span>
+    <span class="lbl">Bottega</span>
+  </button>
+  <button class="tab-btn" data-target="#feste">
+    <span class="ico">🎄</span>
+    <span class="lbl">Feste</span>
+  </button>
+  <button class="tab-btn" data-target="#recensioni">
+    <span class="ico">★</span>
+    <span class="lbl">Voci</span>
+  </button>
+  <button class="tab-btn" data-target="#trovaci">
+    <span class="ico">📍</span>
+    <span class="lbl">Trovaci</span>
+  </button>
+</nav>
+
+<script>
+// === Tab bar scroll ===
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var tgt = document.querySelector(btn.dataset.target);
+    if (tgt) tgt.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// === Data corrente + stato apertura ===
+(function(){
+  var dataEl = document.getElementById('data-corrente');
+  var pulse = document.getElementById('pulse-stato');
+  var testo = document.getElementById('testo-stato');
+  var giorni = ['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+  var mesi = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+  function aggiorna() {
+    var d = new Date();
+    if (dataEl) dataEl.textContent = giorni[d.getDay()] + ' ' + d.getDate() + ' ' + mesi[d.getMonth()];
+    var dow = d.getDay();
+    var min = d.getHours() * 60 + d.getMinutes();
+    var aperto = (dow !== 0) && ((min >= 450 && min < 870) || (min >= 1020 && min < 1200));
+    if (testo) testo.textContent = aperto ? 'aperti ora' : 'chiusi ora';
+    if (pulse) pulse.style.background = aperto ? '#5a8d4a' : '#b45a3c';
+  }
+  aggiorna();
+  setInterval(aggiorna, 60000);
+})();
+
+// === Carosello recensioni mobile ===
+(function(){
+  var track = document.getElementById('rec-track');
+  var dotsContainer = document.getElementById('rec-dots');
+  if (!track || !dotsContainer) return;
+  var cards = track.querySelectorAll('.m-rec-card');
+  var idx = 0;
+  var totalSlides = cards.length;
+  var auto;
+  function dots() {
+    dotsContainer.innerHTML = '';
+    for (var i = 0; i < totalSlides; i++) {
+      var d = document.createElement('button');
+      d.className = 'm-rec-dot' + (i === idx ? ' active' : '');
+      d.dataset.i = i;
+      d.addEventListener('click', function(e){ idx = parseInt(e.target.dataset.i); upd(); reset(); });
+      dotsContainer.appendChild(d);
+    }
+  }
+  function upd() {
+    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    dotsContainer.querySelectorAll('.m-rec-dot').forEach(function(d,i){ d.classList.toggle('active', i === idx); });
+  }
+  function next() { idx = (idx + 1) % totalSlides; upd(); }
+  function start() { stop(); auto = setInterval(next, 4500); }
+  function stop() { if (auto) { clearInterval(auto); auto = null; } }
+  function reset() { stop(); start(); }
+  // Swipe touch
+  var x0 = 0;
+  track.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; stop(); }, {passive:true});
+  track.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - x0;
+    if (dx < -40) next();
+    else if (dx > 40) { idx = (idx - 1 + totalSlides) % totalSlides; upd(); }
+    start();
+  }, {passive:true});
+  dots(); upd(); start();
+})();
+
+// === Service worker PWA ===
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('service-worker.js').catch(function(){});
+  });
+}
+
+// === Link "vai al desktop" salva preferenza ===
+document.getElementById('link-desktop').addEventListener('click', function(){
+  try { localStorage.setItem('force_desktop', '1'); } catch(e){}
+});
+</script>
+
+</body>
+</html>
